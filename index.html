@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sacred Tower</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow: hidden;
+    }
+
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: 8vh;
+    }
+
+    .cover {
+      width: 260px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 0.4em;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      color: #cccccc;
+      margin-bottom: 2em;
+    }
+
+    .btn-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 0 20px;
+    }
+
+    .btn {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 12px 24px;
+      border-radius: 10px;
+      width: 280px;
+      max-width: 90vw;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon img {
+      height: 22px;
+      width: 22px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Фон с туманом -->
+  <video class="fog" autoplay loop muted playsinline>
+    <source src="fog_demo_small.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Контент -->
+  <div class="content">
+    <img src="Sacred Tower.jpg" alt="Sacred Tower cover" class="cover" />
+    <h1>Sacred Tower</h1>
+    <div class="subtitle" id="subtitle">Listen on your favorite platform</div>
+
+    <div class="btn-list">
+      <a href="#" class="btn">
+        <span class="icon">
+          <img src="Logo/Spotify.png" alt="Spotify" />
+          <span id="btn-spotify">Listen</span>
+        </span>
+        <span class="service">Spotify</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">
+          <img src="Logo/Apple_Music.png" alt="Apple Music" />
+          <span id="btn-apple">Listen</span>
+        </span>
+        <span class="service">Apple Music</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">
+          <img src="Logo/Youtube_Music.png" alt="YouTube Music" />
+          <span id="btn-ytmusic">Listen</span>
+        </span>
+        <span class="service">YouTube Music</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">
+          <img src="Logo/VK_Music.png" alt="VK" />
+          <span id="btn-vk">Listen</span>
+        </span>
+        <span class="service">VK Музыка</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">
+          <img src="Logo/Yandex_Music.png" alt="Yandex" />
+          <span id="btn-yandex">Listen</span>
+        </span>
+        <span class="service">Яндекс Музыка</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const isRu = navigator.language.startsWith("ru");
+    document.getElementById("subtitle").textContent = isRu
+      ? "Слушайте на любимой платформе"
+      : "Listen on your favorite platform";
+
+    document.getElementById("btn-spotify").textContent = isRu ? "Слушать" : "Listen";
+    document.getElementById("btn-apple").textContent = isRu ? "Слушать" : "Listen";
+    document.getElementById("btn-ytmusic").textContent = isRu ? "Слушать" : "Listen";
+    document.getElementById("btn-vk").textContent = isRu ? "Слушать" : "Listen";
+    document.getElementById("btn-yandex").textContent = isRu ? "Слушать" : "Listen";
+  </script>
+</body>
+</html>
