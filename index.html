@@ -46,7 +46,16 @@
       border-radius: 0;
       box-shadow: 0 6px 24px 0 #000c;
       border: 2px solid #222;
-    }
+      animation: pulse-cover 6.2s ease-in-out infinite;
+}
+
+@keyframes pulse-cover {
+  0%   { filter: brightness(0.85) blur(1.2px);}
+  15%  { filter: brightness(1.08) blur(0.6px);}
+  40%  { filter: brightness(1.18) blur(0);}
+  80%  { filter: brightness(1.18) blur(0);}
+  100% { filter: brightness(0.85) blur(1.2px);}
+}
     /* === SHINE EFFECT === */
 .shine {
   color: #fff3c1;
@@ -200,5 +209,6 @@
   </script>
 </body>
 </html>
+
 
 
